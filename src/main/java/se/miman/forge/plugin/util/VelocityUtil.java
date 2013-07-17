@@ -120,6 +120,32 @@ public class VelocityUtil {
 	/**
 	 * Stores the template file as the target file after running a velocity merge on the template file.
 	 * The correct file path is retrieved from the Java class.
+	 * The file is stored in the Test folder.
+	 * @param templateFilePath	The template file to store after replacing all velocity placeholders
+	 * @param velocityContext	The velocity placeholder mappings
+	 * @return	The target file
+	 */
+	public JavaResource createJavaTestSource(String template, VelocityContext velocityContext, 
+			Project project, VelocityEngine velocityEngine) {
+		JavaSourceFacet java = project.getFacet(JavaSourceFacet.class);
+
+		StringWriter stringWriter = new StringWriter();
+		velocityEngine.mergeTemplate(template, UTF_8, velocityContext,
+				stringWriter);
+
+		JavaType<?> serviceClass = JavaParser.parse(JavaType.class,
+				stringWriter.toString());
+		try {
+			JavaResource saveJavaSource = java.saveTestJavaSource(serviceClass);
+			return saveJavaSource;
+		} catch (FileNotFoundException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	/**
+	 * Stores the template file as the target file after running a velocity merge on the template file.
+	 * The correct file path is retrieved from the Java class.
 	 * @param templateFilePath	The template file to store after replacing all velocity placeholders
 	 * @param velocityContext	The velocity placeholder mappings
 	 * @return	The target file
