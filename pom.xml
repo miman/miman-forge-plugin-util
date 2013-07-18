@@ -79,8 +79,8 @@
 	</build>
 
 	<scm>
-		<connection>scm:git:git@github.com:mikaelth/miman-forge-plugin-util.git</connection>
-		<url>scm:git:git@github.com:mikaelth/miman-forge-plugin-util.git</url>
-		<developerConnection>scm:git:git@github.com:mikaelth/miman-forge-plugin-util.git</developerConnection>
+		<connection>scm:git:git@github.com:miman/miman-forge-plugin-util.git</connection>
+		<url>scm:git:git@github.com:miman/miman-forge-plugin-util.git</url>
+		<developerConnection>scm:git:git@github.com:miman/miman-forge-plugin-util.git</developerConnection>
   </scm>
 </project>
