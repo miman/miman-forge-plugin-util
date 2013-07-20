@@ -1,4 +1,4 @@
-package se.miman.forge.plugin.util;
+package eu.miman.forge.plugin.util;
 
 import java.io.FileNotFoundException;
 import java.io.StringWriter;

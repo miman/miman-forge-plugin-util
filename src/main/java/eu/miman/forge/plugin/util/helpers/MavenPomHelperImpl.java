@@ -1,4 +1,4 @@
-package se.miman.forge.plugin.util.helpers;
+package eu.miman.forge.plugin.util.helpers;
 
 import java.io.File;
 import java.io.IOException;
@@ -13,7 +13,8 @@ import org.apache.maven.model.io.xpp3.MavenXpp3Reader;
 import org.codehaus.plexus.util.xml.pull.XmlPullParserException;
 import org.jboss.forge.project.ProjectModelException;
 
-import se.miman.forge.plugin.util.dto.MavenProjectId;
+import eu.miman.forge.plugin.util.dto.MavenProjectId;
+
 
 public class MavenPomHelperImpl implements MavenPomHelper {
 

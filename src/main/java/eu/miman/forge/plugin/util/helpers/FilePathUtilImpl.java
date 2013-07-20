@@ -1,4 +1,4 @@
-package se.miman.forge.plugin.util.helpers;
+package eu.miman.forge.plugin.util.helpers;
 
 import org.jboss.forge.project.Project;
 import org.jboss.forge.project.facets.JavaSourceFacet;

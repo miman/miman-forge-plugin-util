@@ -1,4 +1,4 @@
-package se.miman.forge.plugin.util.dto;
+package eu.miman.forge.plugin.util.dto;
 
 /**
  * A DTO class for a maven pom file, with its id's and relative path.

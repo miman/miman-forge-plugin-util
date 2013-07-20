@@ -1,4 +1,4 @@
-package se.miman.forge.plugin.util;
+package eu.miman.forge.plugin.util;
 
 import org.jboss.forge.project.services.ProjectFactory;
 import org.jboss.forge.resources.DirectoryResource;

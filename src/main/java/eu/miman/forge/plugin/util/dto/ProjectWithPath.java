@@ -1,4 +1,4 @@
-package se.miman.forge.plugin.util.dto;
+package eu.miman.forge.plugin.util.dto;
 
 import org.jboss.forge.project.Project;
 

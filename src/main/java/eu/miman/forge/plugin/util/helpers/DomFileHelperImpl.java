@@ -1,4 +1,4 @@
-package se.miman.forge.plugin.util.helpers;
+package eu.miman.forge.plugin.util.helpers;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

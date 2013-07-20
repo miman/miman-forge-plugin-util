@@ -1,4 +1,4 @@
-package se.miman.forge.plugin.util;
+package eu.miman.forge.plugin.util;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -12,8 +12,9 @@ import org.jboss.forge.project.services.ProjectFactory;
 import org.jboss.forge.resources.DirectoryResource;
 import org.jboss.forge.resources.Resource;
 
-import se.miman.forge.plugin.util.dto.MavenProjectId;
-import se.miman.forge.plugin.util.dto.ProjectWithPath;
+import eu.miman.forge.plugin.util.dto.MavenProjectId;
+import eu.miman.forge.plugin.util.dto.ProjectWithPath;
+
 
 /**
  * This is a helper class for project organized according to the Nazgul project

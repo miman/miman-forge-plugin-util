@@ -1,7 +1,7 @@
 /**
  * 
  */
-package se.miman.forge.plugin.util;
+package eu.miman.forge.plugin.util;
 
 import java.util.List;
 
@@ -13,8 +13,9 @@ import org.jboss.forge.project.facets.BaseFacet;
 import org.jboss.forge.project.facets.DependencyFacet;
 import org.jboss.forge.shell.plugins.RequiresFacet;
 
-import se.miman.forge.plugin.util.helpers.MavenPomHelper;
-import se.miman.forge.plugin.util.helpers.MavenPomHelperImpl;
+import eu.miman.forge.plugin.util.helpers.MavenPomHelper;
+import eu.miman.forge.plugin.util.helpers.MavenPomHelperImpl;
+
 
 /**
  * This is a base Facet class.

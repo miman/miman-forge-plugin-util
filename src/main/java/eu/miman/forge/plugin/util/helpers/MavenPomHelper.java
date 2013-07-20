@@ -1,11 +1,12 @@
-package se.miman.forge.plugin.util.helpers;
+package eu.miman.forge.plugin.util.helpers;
 
 import java.util.List;
 
 import org.apache.maven.model.Dependency;
 import org.apache.maven.model.Model;
 
-import se.miman.forge.plugin.util.dto.MavenProjectId;
+import eu.miman.forge.plugin.util.dto.MavenProjectId;
+
 
 /**
  * A helper class for working with Maven pom files.
