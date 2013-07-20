@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>se.miman.forge.plugin.util</groupId>
 	<artifactId>miman-forge-plugin-util</artifactId>
 	<version>1.0.2-SNAPSHOT</version>
 	<name>${project.artifactId}</name>
+	<url>https://github.com/miman/miman-forge-plugin-util</url>
+	<description>Utility classes to be used in JBoss Forge Plugin projects</description>
 
-    <properties>
+	<properties>
 		<forge.api.version>1.2.3.Final</forge.api.version>
 		<junit.version>4.11</junit.version>
-    </properties>
-	
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.jboss.forge</groupId>
@@ -48,16 +51,8 @@
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
-		
 	</dependencies>
 
-
-	<repositories>
-		<repository>
-			<id>JBOSS_NEXUS</id>
-			<url>http://repository.jboss.org/nexus/content/groups/public</url>
-		</repository>
-	</repositories>
 	<build>
 		<finalName>miman-forge-plugin-util-impl</finalName>
 		<plugins>
@@ -82,6 +77,20 @@
 		<connection>scm:git:git@github.com:miman/miman-forge-plugin-util.git</connection>
 		<url>scm:git:git@github.com:miman/miman-forge-plugin-util.git</url>
 		<developerConnection>scm:git:git@github.com:miman/miman-forge-plugin-util.git</developerConnection>
-    <tag>HEAD</tag>
-  </scm>
+		<tag>HEAD</tag>
+	</scm>
+	<developers>
+		<developer>
+			<id>miman</id>
+			<name>Mikael Thorman</name>
+			<email>mimanit@gmail.com</email>
+		</developer>
+	</developers>
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
 </project>
