@@ -5,6 +5,8 @@ import java.io.File;
 import org.junit.Test;
 import org.junit.Assert;
 
+import eu.miman.forge.plugin.util.NazgulPrjUtil;
+
 public class NazgulPrjUtilTest {
 
 	/**
