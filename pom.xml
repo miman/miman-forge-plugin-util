@@ -53,7 +53,6 @@
 	</dependencies>
 
 	<build>
-		<finalName>miman-forge-plugin-util-impl</finalName>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
