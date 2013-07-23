@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>eu.miman.forge.plugin.util</groupId>
 	<artifactId>miman-forge-plugin-util</artifactId>
-	<version>1.1.1-SNAPSHOT</version>
+	<version>1.1.1</version>
 	<name>${project.artifactId}</name>
 	<url>https://github.com/miman/miman-forge-plugin-util</url>
 	<description>Utility classes to be used in JBoss Forge Plugin projects</description>
@@ -107,7 +106,7 @@
 		<connection>scm:git:git@github.com:miman/miman-forge-plugin-util.git</connection>
 		<url>scm:git:git@github.com:miman/miman-forge-plugin-util.git</url>
 		<developerConnection>scm:git:git@github.com:miman/miman-forge-plugin-util.git</developerConnection>
-		<tag>HEAD</tag>
+		<tag>miman-forge-plugin-util-1.1.1</tag>
 	</scm>
 	<developers>
 		<developer>
