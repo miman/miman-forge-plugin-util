@@ -80,6 +80,9 @@ public class NazgulPrjUtil {
 		if (rootDir == null) {
 			return null;
 		}
+		if (rootDir.equals(project.getProjectRoot())) {
+			return project;
+		}
 		@SuppressWarnings("unchecked")
 		Project prj = prjFactory.createProject(rootDir, MavenCoreFacet.class);
 		return prj;
@@ -103,13 +106,18 @@ public class NazgulPrjUtil {
 		if (rootDir == null) {
 			return null;	// Root not found
 		}
+		
+
 		// Now find the parent project under the poms subdirectory
 		for (Resource<?> child : rootDir.listResources()) {
 			if ("poms".equals(child.getName())) {
 //				System.out.println("poms subdir found for prj: " + child.getFullyQualifiedName());
 				if (DirectoryResource.class.isInstance(child)) {
+					String artifactId = child.getParent().getName();
+					int index = artifactId.lastIndexOf("-");
+					artifactId = artifactId.substring(0, index);
 					Resource<?> parentDir = ((DirectoryResource) child)
-							.getChild(child.getParent().getName() + "-parent");
+							.getChild(artifactId + "-parent");
 					if (DirectoryResource.class.isInstance(parentDir)) { 
 						String pathToParent = calculatePathToDir(dirForThisPrj.getFullyQualifiedName(), parentDir.getFullyQualifiedName());
 						ProjectWithPath reply = new ProjectWithPath(prjFactory
@@ -123,6 +131,47 @@ public class NazgulPrjUtil {
 		return null;
 	}
 
+	/**
+	 * Goes though the root projects children & their children for the model parent
+	 * 
+	 * @param project
+	 *            The project we are starting our search from
+	 * @param projectLocator
+	 *            The project locator
+	 * @return The parent project (or null if not found)
+	 */
+	@SuppressWarnings("unchecked")
+	public ProjectWithPath findModelParentProject(Project project,
+			ProjectFactory prjFactory) {
+		DirectoryResource rootDir = findRootDirectory(project, prjFactory);
+		DirectoryResource dirForThisPrj = project.getProjectRoot();
+		
+		if (rootDir == null) {
+			return null;	// Root not found
+		}
+		// Now find the parent project under the poms subdirectory
+		for (Resource<?> child : rootDir.listResources()) {
+			if ("poms".equals(child.getName())) {
+//				System.out.println("poms subdir found for prj: " + child.getFullyQualifiedName());
+				if (DirectoryResource.class.isInstance(child)) {
+					String artifactId = child.getParent().getName();
+					int index = artifactId.lastIndexOf("-");
+					artifactId = artifactId.substring(0, index);
+					Resource<?> parentDir = ((DirectoryResource) child)
+							.getChild(artifactId + "-model-parent");
+					if (DirectoryResource.class.isInstance(parentDir)) { 
+						String pathToParent = calculatePathToDir(dirForThisPrj.getFullyQualifiedName(), parentDir.getFullyQualifiedName());
+						ProjectWithPath reply = new ProjectWithPath(prjFactory
+								.createProject((DirectoryResource) parentDir, MavenCoreFacet.class), pathToParent);
+						return reply;
+					}
+				}
+			}
+		}
+
+		return null;
+	}
+	
 	/**
 	 * Calculated the path from the source dir to the target dir.
 	 * OBS ! They must be on the same disk ! 
