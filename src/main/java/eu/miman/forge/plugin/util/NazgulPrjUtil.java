@@ -11,6 +11,7 @@ import org.jboss.forge.project.Project;
 import org.jboss.forge.project.services.ProjectFactory;
 import org.jboss.forge.resources.DirectoryResource;
 import org.jboss.forge.resources.Resource;
+import org.jboss.forge.resources.UnknownFileResource;
 
 import eu.miman.forge.plugin.util.dto.MavenProjectId;
 import eu.miman.forge.plugin.util.dto.ProjectWithPath;
@@ -122,7 +123,7 @@ public class NazgulPrjUtil {
 					}
 					Resource<?> parentDir = ((DirectoryResource) child)
 							.getChild(artifactId + "-reactor-parent");
-					if (parentDir == null) {
+					if (UnknownFileResource.class.isInstance(parentDir)) {
 						parentDir = ((DirectoryResource) child)
 								.getChild(artifactId + "-parent");						
 					}
