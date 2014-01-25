@@ -89,7 +89,9 @@ public class NazgulPrjUtil {
 	}
 
 	/**
-	 * Goes though the root projects children & their children for the parent
+	 * Goes though the root projects children & their children for the parent.
+	 * 
+	 * For this function to work the pom parent project name MUST be the root reactor name + "-parent" OR the root reactor name + "-reactor-parent"   
 	 * 
 	 * @param project
 	 *            The project we are starting our search from
@@ -115,9 +117,15 @@ public class NazgulPrjUtil {
 				if (DirectoryResource.class.isInstance(child)) {
 					String artifactId = child.getParent().getName();
 					int index = artifactId.lastIndexOf("-");
-					artifactId = artifactId.substring(0, index);
+					if (index > 0) {
+						artifactId = artifactId.substring(0, index);	
+					}
 					Resource<?> parentDir = ((DirectoryResource) child)
-							.getChild(artifactId + "-parent");
+							.getChild(artifactId + "-reactor-parent");
+					if (parentDir == null) {
+						parentDir = ((DirectoryResource) child)
+								.getChild(artifactId + "-parent");						
+					}
 					if (DirectoryResource.class.isInstance(parentDir)) { 
 						String pathToParent = calculatePathToDir(dirForThisPrj.getFullyQualifiedName(), parentDir.getFullyQualifiedName());
 						ProjectWithPath reply = new ProjectWithPath(prjFactory
